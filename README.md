@@ -1,8 +1,35 @@
 # lib-simplex
 
-simplex noise generators — Handl stdlib port
+Simplex noise generators — Handl stdlib port.
 
-Part of the `handl-lang` org split (ADR-0128); moved from `kit-canonical/handl-packages/simplex/`.
+Ships both the .hnl sources under `src/` and a const-only Rust crate
+(`src/lib.rs`) that re-exports them.
+
+## Layout
+
+```text
+src/simplex.hnl       the .hnl sources
+src/simplex.test.hnl  the .hnl test suite
+src/lib.rs            const-only crate re-exporting the source
+pkg.hnl               package manifest — modules, deps, description, license
+ci.sh                 bupha entry → scripts/hnl-gate.sh
+```
+
+## Gate
+
+```bash
+HNL=../host-cli/target/debug/hnl scripts/hnl-gate.sh
+./ci.sh                # full gate (bupha entry)
+```
+
+## Development
+
+```bash
+cargo xtask gate        # fmt --check → clippy -D warnings → test → doc
+```
+
+`cargo xtask` wraps the repo's `xtask/` crate (`fmt`, `clippy`, `test`, `doc`,
+`check`, `gate`).
 
 ## License
 

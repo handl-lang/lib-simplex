@@ -1,2 +1,2 @@
 -- lib-simplex: package manifest.
-{ modules: ["simplex"] }
+{ modules: ["simplex"], description: "Simplex noise generators (Handl stdlib port).", license: "MIT" }
