@@ -22,7 +22,7 @@ re-exports them.
 
 ```bash
 HNL=../host-cli/target/debug/hnl scripts/hnl-gate.sh
-./ci.sh                # full gate (bupha entry)
+# bupha entry: workflows/gate.yaml (handl-gates campaign)
 ```
 
 ## License
