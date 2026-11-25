@@ -12,14 +12,14 @@ src/simplex.hnl       the .hnl sources
 src/simplex.test.hnl  the .hnl test suite
 src/lib.rs            const-only crate re-exporting the source
 pkg.hnl               package manifest — modules, deps, description, license
-ci.sh                 bupha entry → scripts/hnl-gate.sh
+workflows/gate.yaml                 bupha entry (handl-gates) → scripts/hnl-gate.sh
 ```
 
 ## Gate
 
 ```bash
 HNL=../host-cli/target/debug/hnl scripts/hnl-gate.sh
-./ci.sh                # full gate (bupha entry)
+HNL=../host-cli/target/debug/hnl scripts/hnl-gate.sh  # full gate (bupha entry)
 ```
 
 ## Development
